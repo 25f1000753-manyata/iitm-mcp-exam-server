@@ -42,7 +42,7 @@ class AcceptCompatibilityMiddleware:
                  if k.lower() == b"accept"),
                 "",
             )
-            if "application/json" not in accept.lower():
+            if ("application/json" not in accept.lower() or "text/event-stream" not in accept.lower()):
                 headers = [
                     (k, v) for k, v in headers
                     if k.lower() != b"accept"
