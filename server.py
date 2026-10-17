@@ -10,7 +10,7 @@ mcp = FastMCP(
     host="0.0.0.0",
     port=int(os.environ.get("PORT", "8000")),
     stateless_http=True,
-    json_response=True,
+    json_response=False,
 )
 
 @mcp.tool()
